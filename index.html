@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌲 馬胎仙境團露 - 端午連假大攻略</title>
+    <title>🌲 馬胎仙境團露 - 行程與住宿分配大攻略</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,38 +15,204 @@
 
     <header class="bg-emerald-800 text-white text-center py-8 px-4 shadow-md relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <h1 class="text-2xl md:text-4xl font-bold mb-2"><i class="fa-solid fa-tree text-emerald-300 mr-2"></i>馬胎仙境團露</h1>
-        <p class="text-sm md:text-base text-emerald-100 font-medium tracking-wider">2026 / 06 / 19 (五) ～ 06 / 21 (日) 🌟 端午連假特輯</p>
+        <h1 class="text-2xl md:text-4xl font-bold mb-2"><i class="fa-solid fa-tree text-emerald-300 mr-2"></i>馬胎仙境團露攻略</h1>
+        <p class="text-sm md:text-base text-emerald-100 font-medium tracking-wider">2026 / 06 / 19 (五) ～ 06 / 21 (日) 🌟 端午連假</p>
+        <p class="text-xs text-emerald-200/80 mt-1">19-20日 (共 16 人) ｜ 20-21日 (共 23 人)</p>
     </header>
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50 flex justify-start md:justify-center overflow-x-auto border-b border-stone-200 scrollbar-none">
-        <button onclick="switchTab('itinerary')" id="tab-itinerary" class="tab-btn px-6 py-4 border-b-2 border-emerald-600 text-emerald-600 font-bold flex-shrink-0 flex items-center gap-2">
-            <i class="fa-solid fa-calendar-days"></i> 行程時程
+    <nav class="bg-white shadow-sm sticky top-0 z-50 flex justify-start md:justify-center overflow-x-auto border-b border-stone-200">
+        <button onclick="switchTab('rooms')" id="tab-rooms" class="tab-btn px-6 py-4 border-b-2 border-emerald-600 text-emerald-600 font-bold flex-shrink-0 flex items-center gap-2">
+            <i class="fa-solid fa-bed"></i> 住宿與成員分配
         </button>
-        <button onclick="switchTab('rooms')" id="tab-rooms" class="tab-btn px-6 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-800 font-medium flex-shrink-0 flex items-center gap-2">
-            <i class="fa-solid fa-bed"></i> 房間與床位
+        <button onclick="switchTab('itinerary')" id="tab-itinerary" class="tab-btn px-6 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-800 font-medium flex-shrink-0 flex items-center gap-2">
+            <i class="fa-solid fa-calendar-days"></i> 行程規劃
         </button>
         <button onclick="switchTab('checklist')" id="tab-checklist" class="tab-btn px-6 py-4 border-b-2 border-transparent text-stone-500 hover:text-stone-800 font-medium flex-shrink-0 flex items-center gap-2">
-            <i class="fa-solid fa-clipboard-list"></i> 裝備自備清單
+            <i class="fa-solid fa-clipboard-list"></i> 自備裝備清單
         </button>
     </nav>
 
     <main class="max-w-4xl mx-auto px-4 mt-6">
 
-        <div id="content-itinerary" class="tab-content active space-y-6">
+        <div id="content-rooms" class="tab-content active space-y-4">
+            <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-stone-200">
+                <span class="text-sm font-medium text-stone-600"><i class="fa-solid fa-wallet text-emerald-600 mr-1"></i> 總房費狀態：<b class="text-stone-900">$46,800</b></span>
+                <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded font-bold">全部已繳費</span>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">馬櫻丹 M1區 (1F)</h3>
+                        <p class="text-xs text-stone-500">房型基礎：四人房 ｜ 說明：4人住4人房 (剛好)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $9,600</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">19-20 入住</span>
+                        <b class="text-emerald-800">黑鬼 (2大 2小)</b>
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-emerald-800">黑鬼 (2大 2小)</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">馬櫻丹 M2區 (2F)</h3>
+                        <p class="text-xs text-stone-500">房型基礎：四人房 ｜ 說明：4人住4人房 (剛好)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $4,800</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded text-stone-400 italic">
+                        19-20 無入住成員
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-emerald-800">老潘 (2大 2小)</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200 bg-amber-50/40 border-amber-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">雙人合掌屋 1</h3>
+                        <p class="text-xs text-stone-500">房型基礎：雙人房 ｜ 說明：需加 1 人 (不到12歲free)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $7,200</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">19-20 入住</span>
+                        <b class="text-amber-800">Chih (2大 1小)</b>
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-amber-800">Chih (2大 1小)</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200 bg-amber-50/40 border-amber-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">雙人合掌屋 2</h3>
+                        <p class="text-xs text-stone-500">房型基礎：雙人房 ｜ 說明：需加 1 人 (不到12歲free)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $7,200</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">19-20 入住</span>
+                        <b class="text-amber-800">餅乾 (2大 1小)</b>
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-amber-800">餅乾 (2大 1小)</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">雙人合掌屋 3</h3>
+                        <p class="text-xs text-stone-500">房型基礎：雙人房 ｜ 說明：2人住2人房 (剛好)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $7,200</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">19-20 入住</span>
+                        <b class="text-stone-800">小威- (2人)</b>
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-stone-800">小威- (2人)</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">雙人合掌屋 4</h3>
+                        <p class="text-xs text-stone-500">房型基礎：雙人房 ｜ 說明：2人住2人房 (剛好)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $7,200</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">19-20 入住</span>
+                        <b class="text-stone-800">欣俞 (2大)</b>
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-stone-800">欣俞 (2人)</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">山頂區合掌屋 1</h3>
+                        <p class="text-xs text-stone-500">房型基礎：雙人房 ｜ 說明：2人住2人房 (剛好)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $7,200</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">19-20 入住</span>
+                        <b class="text-stone-800">肯尼 + 王暉評 (2大)</b>
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-stone-800">肯尼 + 王暉評 (2人)</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200 bg-amber-50/40 border-amber-200">
+                <div class="flex justify-between items-start border-b pb-2 mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-stone-900">山頂區合掌屋 2</h3>
+                        <p class="text-xs text-stone-500">房型基礎：雙人房 ｜ 說明：需加 1 人 (不到12歲free)</p>
+                    </div>
+                    <span class="bg-stone-100 text-stone-700 text-xs px-2 py-1 rounded font-mono">費用: $3,600</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                    <div class="p-2 bg-stone-50 rounded text-stone-400 italic">
+                        19-20 無入住成員
+                    </div>
+                    <div class="p-2 bg-stone-50 rounded">
+                        <span class="text-xs text-stone-400 block">20-21 入住</span>
+                        <b class="text-amber-800">小胖 (2大 1小)</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-itinerary" class="tab-content space-y-6">
             <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r shadow-sm">
                 <h3 class="font-bold text-amber-800 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 端午連假重大交通預警</h3>
-                <p class="text-sm text-amber-700 mt-1">1. <b>內灣老街與尖石山路</b>：連假每日 11:00-14:00 極度擁堵，車位一位難求，請務必提早出發。</p>
+                <p class="text-sm text-amber-700 mt-1">1. <b>內灣與尖石山路</b>：連假每日 11:00-14:00 極度擁堵，車位一位難求，請務必提早出發。</p>
                 <p class="text-sm text-amber-700">2. <b>國道北返</b>：最後一天 (6/21) 下午 15:00 後國三北上必塞，行程已微調提早出發以避開地獄車潮。</p>
             </div>
 
             <div class="bg-white rounded-lg shadow-sm p-6 border border-stone-200">
                 <h2 class="text-xl font-bold text-emerald-800 border-b pb-2 mb-4 flex items-center gap-2">
-                    <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Day 1</span> 06 / 19 (五) 抵達營區與烤肉派對
+                    <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Day 1</span> 06 / 19 (五) 抵達營區與烤肉派對 (共 16 人)
                 </h2>
                 <ul class="relative border-l-2 border-stone-200 ml-2 space-y-4 text-sm md:text-base">
                     <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">13:00 - 14:00</b> 早鳥出發！沿途行經內灣建議直接通過不上老街，直奔營區避開塞車。</li>
-                    <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">14:00 - 15:00</b> 營區報到 Check-in。各組人馬依分配進駐「馬櫻丹」與「合掌屋」。</li>
+                    <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">14:00 - 15:00</b> 營區報到 Check-in。各組人馬依分配進駐房間。</li>
                     <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">15:00 - 17:30</b> 山林下午茶、自由放空聊天時間，享受無敵山景。</li>
                     <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-amber-500 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">17:30 - 21:30</b> <span class="text-amber-700 font-bold">重頭戲：露營屋專用區 烤肉大派對 🍖</span></li>
                 </ul>
@@ -54,13 +220,13 @@
 
             <div class="bg-white rounded-lg shadow-sm p-6 border border-stone-200">
                 <h2 class="text-xl font-bold text-emerald-800 border-b pb-2 mb-4 flex items-center gap-2">
-                    <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Day 2</span> 06 / 20 (六) 突圍老街與戶外野炊
+                    <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Day 2</span> 06 / 20 (六) 突圍老街與老潘、小胖組大會師 (共 23 人)
                 </h2>
                 <ul class="relative border-l-2 border-stone-200 ml-2 space-y-4 text-sm md:text-base">
                     <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">08:30 - 09:30</b> 享用森林晨光早餐（需自備炊具食材在露台料理）。</li>
                     <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-amber-500 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">09:30 - 13:00</b> <span class="text-amber-700 font-bold">提早進攻內灣老街 🍍</span>（09:30 準時下山卡車位，中午前完食撤退）</li>
-                    <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">13:00 - 14:30</b> 逆向回山上！當遊客湧入老街，我們剛好回營區避暑與午休。</li>
-                    <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">17:30 - 21:00</b> 各家大廚大會師！在各房戶外露台享受熱鬧的野炊晚餐。</li>
+                    <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">13:00 - 14:30</b> 迎來老潘、小胖組成員進駐！大家一同回營區避暑與午休。</li>
+                    <li class="pl-5 relative"><div class="absolute w-3 h-3 bg-emerald-600 rounded-full -left-[7px] top-1.5"></div><b class="text-stone-900">17:30 - 21:00</b> 各家大廚大會師！在各房戶外露台享受熱鬧的野炊大晚餐。</li>
                 </ul>
             </div>
 
@@ -77,72 +243,6 @@
             </div>
         </div>
 
-        <div id="content-rooms" class="tab-content space-y-4">
-            <p class="text-xs text-stone-500 text-right">房費總計：$31,200 (連假基本價，不含現場加人費)</p>
-            
-            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200">
-                <div class="flex justify-between items-start border-b pb-2 mb-3">
-                    <div>
-                        <h3 class="text-lg font-bold text-stone-900">馬櫻丹 M1區 (1F)</h3>
-                        <p class="text-xs text-stone-500">基本4人 (可加2人) | 附獨立衛浴、14個插座、電視、風扇</p>
-                    </div>
-                    <span class="bg-emerald-100 text-emerald-800 font-semibold text-sm px-2 py-1 rounded">黑鬼 & 老潘 房</span>
-                </div>
-                <div class="text-sm space-y-1">
-                    <p><b>分配名單：</b> 黑鬼 (2大1小)、老潘 (2大1小) — <span class="font-medium text-emerald-700">共 4 大 2 小</span></p>
-                    <p class="text-stone-600 text-xs">💡 備註：兩家共用一間大空間，一樓進出極度方便。室外有專屬露台卡式爐、烤盤。</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200 bg-amber-50/50 border-amber-200">
-                <div class="flex justify-between items-start border-b pb-2 mb-3">
-                    <div>
-                        <h3 class="text-lg font-bold text-stone-900">馬櫻丹 M2區 (2F)</h3>
-                        <p class="text-xs text-stone-500">基本4人 (可加2人) | 附獨立衛浴、14個插座、電視、風扇</p>
-                    </div>
-                    <span class="bg-amber-100 text-amber-800 font-semibold text-sm px-2 py-1 rounded">Chih 房</span>
-                </div>
-                <div class="text-sm space-y-1">
-                    <p><b>分配名單：</b> Chih (2大3小) — <span class="font-medium text-amber-700">共 2 大 3 小</span></p>
-                    <p class="text-red-600 text-xs font-bold flex items-center gap-1 mt-1">
-                        <i class="fa-solid fa-triangle-exclamation"></i> ⚠️ 總人數 5 人！超出基本 4 人，12歲以下不計費，但營區不附超額寢具，需自備 1 人份睡袋或枕頭被子。
-                    </p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-sm p-5 border border-stone-200">
-                <h3 class="text-lg font-bold text-stone-900 border-b pb-2 mb-3"><i class="fa-solid fa-campground text-amber-600 mr-2"></i>雙人合掌屋系列 (均含冷氣、冰箱、獨立衛浴、10-12個插座)</h3>
-                <div class="divide-y divide-stone-100 text-sm">
-                    <div class="py-3 bg-amber-50/30 px-2 rounded">
-                        <p class="flex justify-between"><b>山頂區 合掌屋 1 : 餅乾 (2大1小)</b> <span class="text-red-500 font-bold text-xs">⚠️ 需自備1人份睡袋/被子</span></p>
-                    </div>
-                    <div class="py-3 px-2">
-                        <p><b>山頂區 合掌屋 2 : 小威 (2大)</b></p>
-                    </div>
-                    <div class="py-3 px-2">
-                        <p><b>一般區 合掌屋 3 : 欣俞 (2大)</b></p>
-                    </div>
-                    <div class="py-3 px-2">
-                        <p><b>一般區 合掌屋 4 : 肯尼 (2大)</b></p>
-                    </div>
-                    <div class="py-3 bg-amber-50/30 px-2 rounded">
-                        <p class="flex justify-between"><b>一般區 合掌屋 5 : 小胖 (2大1小)</b> <span class="text-red-500 font-bold text-xs">⚠️ 需自備1人份睡袋/被子</span></p>
-                    </div>
-                    <div class="py-3 px-2">
-                        <p><b>一般區 合掌屋 6 : 小胖朋友 (2大)</b></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-red-50 border border-red-200 p-4 rounded-lg shadow-sm text-sm text-red-800 space-y-1">
-                <h4 class="font-bold flex items-center gap-2 text-red-900"><i class="fa-solid fa-ban"></i> 營區嚴格四大鐵律</h4>
-                <p>1. 輕露營全系列<b>室內全面禁菸、禁止攜帶寵物</b>。</p>
-                <p>2. <b>屋內嚴禁炊煮與用餐</b>，所有飲食聊天請在室外露台或客廳帳下進行。</p>
-                <p>3. 加人不附備品，多出來的成員請一定要攜帶充氣床/睡袋/枕被。</p>
-                <p>4. 車輛抵達後請配合管理員指令，統一停放於集中停車場。</p>
-            </div>
-        </div>
-
         <div id="content-checklist" class="tab-content space-y-4">
             <div class="bg-emerald-50 text-emerald-800 p-3 rounded text-xs flex items-center gap-2">
                 <i class="fa-solid fa-circle-info"></i> 提示：可在手機上直接打勾勾。進度會保存在您的瀏覽器中，重整也不會消失！
@@ -153,7 +253,7 @@
                 <div class="space-y-3">
                     <label class="flex items-start gap-3 cursor-pointer text-sm">
                         <input type="checkbox" id="item1" onchange="saveCheck('item1')" class="w-4 h-4 mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
-                        <span><b>超額人員睡袋 / 枕頭 / 被褥</b> <span class="text-red-500 font-medium">(⚠️ Chih、餅乾、小胖家必帶)</span></span>
+                        <span><b>超額人員睡袋 / 枕頭 / 被褥</b> <span class="text-red-500 font-medium">(⚠️ Chih、餅乾、小胖家因加人，建議依個人習慣斟酌加帶寢具)</span></span>
                     </label>
                     <label class="flex items-start gap-3 cursor-pointer text-sm">
                         <input type="checkbox" id="item2" onchange="saveCheck('item2')" class="w-4 h-4 mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
@@ -161,11 +261,7 @@
                     </label>
                     <label class="flex items-start gap-3 cursor-pointer text-sm">
                         <input type="checkbox" id="item3" onchange="saveCheck('item3')" class="w-4 h-4 mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
-                        <span><b>動力延長線 (約3米以上)</b> (拉到客廳帳或床頭最方便)</span>
-                    </label>
-                    <label class="flex items-start gap-3 cursor-pointer text-sm">
-                        <input type="checkbox" id="item4" onchange="saveCheck('item4')" class="w-4 h-4 mt-0.5 rounded text-emerald-600 focus:ring-emerald-500">
-                        <span><b>戶外露營燈 / 小夜燈</b> (晚上戶外小酌增添氛圍)</span>
+                        <span><b>延長線</b> (方便拉到戶外或床頭充電)</span>
                     </label>
                 </div>
             </div>
@@ -175,8 +271,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                     <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" id="item5" onchange="saveCheck('item5')" class="w-4 h-4 rounded"><span class="font-medium">大小毛巾</span></label>
                     <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" id="item6" onchange="saveCheck('item6')" class="w-4 h-4 rounded"><span class="font-medium">牙刷 / 牙膏 / 漱口杯</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" id="item7" onchange="saveCheck('item7')" class="w-4 h-4 rounded"><span class="font-medium">沐浴乳 / 洗髮精 / 潤髮</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" id="item8" onchange="saveCheck('item8')" class="w-4 h-4 rounded"><span class="font-medium">室內與戶外拖鞋 (必備)</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" id="item7" onchange="saveCheck('item7')" class="w-4 h-4 rounded"><span class="font-medium">個人沐浴盥洗用品</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer"><input type="checkbox" id="item8" onchange="saveCheck('item8')" class="w-4 h-4 rounded"><span class="font-medium">個人室內外拖鞋</span></label>
                 </div>
             </div>
 
@@ -185,23 +281,19 @@
                 <div class="space-y-3 text-sm">
                     <label class="flex items-start gap-3 cursor-pointer">
                         <input type="checkbox" id="item9" onchange="saveCheck('item9')" class="w-4 h-4 mt-0.5 rounded">
-                        <span><b>卡式瓦斯罐</b> <span class="text-amber-600 font-medium">(營區只給爐子不附瓦斯，每房建議帶1-2罐)</span></span>
+                        <span><b>卡式瓦斯罐</b> <span class="text-amber-600 font-medium">(營區不附瓦斯罐，每房建議自備)</span></span>
                     </label>
                     <label class="flex items-start gap-3 cursor-pointer">
                         <input type="checkbox" id="item10" onchange="saveCheck('item10')" class="w-4 h-4 mt-0.5 rounded">
-                        <span><b>個人餐具組合</b> (碗盤、筷子、湯匙、杯子)</span>
+                        <span><b>個人餐具組合</b> (碗盤、筷子、杯子)</span>
                     </label>
                     <label class="flex items-start gap-3 cursor-pointer">
                         <input type="checkbox" id="item11" onchange="saveCheck('item11')" class="w-4 h-4 mt-0.5 rounded">
-                        <span><b>料理工具工具箱</b> (鍋鏟、烤肉夾、食物剪刀、個人湯鍋)</span>
+                        <span><b>習慣的料理工具、洗碗精、菜瓜布</b></span>
                     </label>
                     <label class="flex items-start gap-3 cursor-pointer">
                         <input type="checkbox" id="item12" onchange="saveCheck('item12')" class="w-4 h-4 mt-0.5 rounded">
-                        <span><b>廚房清潔與消耗品</b> (洗碗精、菜瓜布、廚房紙巾、垃圾袋)</span>
-                    </label>
-                    <label class="flex items-start gap-3 cursor-pointer">
-                        <input type="checkbox" id="item13" onchange="saveCheck('item13')" class="w-4 h-4 mt-0.5 rounded">
-                        <span><b>調味料、三天兩夜食材、飲品/酒水/冰塊</b></span>
+                        <span><b>食材、飲品 / 酒水 / 冰塊</b></span>
                     </label>
                 </div>
             </div>
@@ -211,37 +303,32 @@
 
     <script>
         function switchTab(tabId) {
-            // 隱藏所有內容
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            // 取消所有按鈕高亮
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('border-emerald-600', 'text-emerald-600', 'font-bold');
                 btn.classList.add('border-transparent', 'text-stone-500', 'font-medium');
             });
 
-            // 顯示指定內容
             document.getElementById('content-' + tabId).classList.add('active');
-            // 高亮指定按鈕
             const activeBtn = document.getElementById('tab-' + tabId);
             activeBtn.classList.remove('border-transparent', 'text-stone-500', 'font-medium');
             activeBtn.classList.add('border-emerald-600', 'text-emerald-600', 'font-bold');
         }
 
-        // 打勾儲存 LocalStorage 功能
         function saveCheck(id) {
             const isChecked = document.getElementById(id).checked;
-            localStorage.setItem('matai_' + id, isChecked ? 'true' : 'false');
+            localStorage.setItem('matai_v2_' + id, isChecked ? 'true' : 'false');
         }
 
-        // 頁面載入時讀取打勾紀錄
         window.onload = function() {
-            for (let i = 1; i <= 13; i++) {
-                const id = 'item' + i;
-                const status = localStorage.getItem('matai_' + id);
-                if (status === 'true') {
-                    document.getElementById(id).checked = true;
+            const items = ['item1', 'item2', 'item3', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12'];
+            items.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const status = localStorage.getItem('matai_v2_' + id);
+                    if (status === 'true') element.checked = true;
                 }
-            }
+            });
         }
     </script>
 </body>
