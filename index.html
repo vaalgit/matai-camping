@@ -366,17 +366,20 @@
                         <b class="text-stone-900">14:00 - 17:00</b>
                         <span class="text-sky-700 font-bold"> 下午自由活動（三選一，擇優決定）</span>
                         <div class="mt-2 ml-0 grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
-                            <div class="bg-sky-50 border border-sky-200 rounded p-2">
+                            <div class="bg-sky-50 border border-sky-200 rounded p-2 flex flex-col">
                                 <b class="text-sky-700 block mb-1">方案 A｜溪邊戲水 💧</b>
-                                <span class="text-stone-600">馬胎仙境附近油羅溪、馬胎古道溪谷，適合親子夏日消暑，無需預訂。自備拖鞋換洗衣物。</span>
+                                <span class="text-stone-600 flex-1">免費。步行 10 分可達，超適合親子消暑。</span>
+                                <button onclick="openAct('a')" class="mt-2 w-full bg-sky-600 hover:bg-sky-700 text-white py-1.5 rounded font-medium transition-colors">查看完整攻略 →</button>
                             </div>
-                            <div class="bg-orange-50 border border-orange-200 rounded p-2">
+                            <div class="bg-orange-50 border border-orange-200 rounded p-2 flex flex-col">
                                 <b class="text-orange-700 block mb-1">方案 B｜秀巒溫泉 ♨️ <span class="text-red-500">建議預訂</span></b>
-                                <span class="text-stone-600">湯迴廊秀巒，海拔 850 公尺，大眾池親子友善，夏日泡湯消暑放鬆，距內灣約 30 分鐘。電話：03-5847599</span>
+                                <span class="text-stone-600 flex-1">湯迴廊秀巒，海拔 850 公尺，車程 30-40 分，大眾池親子友善。</span>
+                                <button onclick="openAct('b')" class="mt-2 w-full bg-orange-500 hover:bg-orange-600 text-white py-1.5 rounded font-medium transition-colors">查看完整攻略 →</button>
                             </div>
-                            <div class="bg-stone-50 border border-stone-200 rounded p-2">
+                            <div class="bg-stone-50 border border-stone-200 rounded p-2 flex flex-col">
                                 <b class="text-stone-700 block mb-1">方案 C｜營區親子 &amp; 休閒 🎲</b>
-                                <span class="text-stone-600">帶桌遊、撲克牌、羽毛球，在戶外露台輕鬆耗時，小孩玩沙奔跑。最省力最隨興。</span>
+                                <span class="text-stone-600 flex-1">雨天備案首選。桌遊、羽毛球、讓小孩玩沙放電。</span>
+                                <button onclick="openAct('c')" class="mt-2 w-full bg-stone-600 hover:bg-stone-700 text-white py-1.5 rounded font-medium transition-colors">查看完整攻略 →</button>
                             </div>
                         </div>
                     </li>
@@ -557,6 +560,201 @@
 
     </main>
 
+    <!-- ══ Activity Detail Overlays ════════════════════════════════════ -->
+
+    <!-- A: 溪邊戲水 -->
+    <div id="act-a" onclick="if(event.target===this)closeAct('a')"
+         class="fixed inset-0 z-[200] bg-black/60 overflow-y-auto py-6 px-3 flex justify-center items-start" style="display:none">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-xl">
+        <div class="sticky top-0 z-10 bg-sky-600 text-white px-5 py-4 rounded-t-2xl flex justify-between items-start">
+          <div><div class="text-xs text-sky-200 mb-0.5">Day 2 方案 A</div><h2 class="text-xl font-bold">溪邊戲水 💧</h2></div>
+          <button onclick="closeAct('a')" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-xl font-bold flex items-center justify-center flex-shrink-0">✕</button>
+        </div>
+        <div class="p-5 space-y-5 text-sm">
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-medium">💰 完全免費</span>
+            <span class="bg-sky-100 text-sky-800 px-2.5 py-1 rounded-full font-medium">📅 無需預訂</span>
+            <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-medium">🚶 步行 10-15 分可到</span>
+            <span class="bg-red-100 text-red-700 px-2.5 py-1 rounded-full font-medium">⚠️ 15:30 前必須離水</span>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-2"><i class="fa-solid fa-map-location-dot text-sky-600 mr-1"></i>地點地圖</p>
+            <div id="map-act-a" class="rounded-lg border border-stone-200 overflow-hidden" style="height:190px"></div>
+            <p class="text-xs text-stone-400 mt-1">① 馬胎仙境出發　② 溪邊入水區（沿台120下山方向）</p>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-3"><i class="fa-solid fa-route text-sky-600 mr-1"></i>怎麼去（二選一）</p>
+            <div class="space-y-3 text-xs">
+              <div class="bg-sky-50 rounded-lg p-3 border border-sky-200">
+                <div class="font-bold text-sky-800 mb-2">🚶 步行路線（推薦，帶嬰幼兒也 OK）</div>
+                <ol class="space-y-1.5 text-stone-600 list-decimal list-inside">
+                  <li>出發前先問營區工作人員「下溪邊的入口在哪」，他們每天指路很熟悉</li>
+                  <li>從馬胎仙境正門沿台120往內灣方向徒步</li>
+                  <li>約 10-15 分鐘後聽到溪水聲，看到路旁有小徑往下走就到了</li>
+                  <li>選淺灘區入水，通常有其他遊客，跟著人走就對</li>
+                </ol>
+              </div>
+              <div class="bg-stone-50 rounded-lg p-3 border border-stone-200">
+                <div class="font-bold text-stone-700 mb-2">🚗 開車路線（推車 / 大量裝備時用）</div>
+                <ol class="space-y-1.5 text-stone-600 list-decimal list-inside">
+                  <li>從馬胎仙境開車沿台120往內灣方向下山</li>
+                  <li>約 3-5 分鐘，看到路邊橋旁有溪谷視野就找位停車</li>
+                  <li>從路旁小徑走下去（1-2 分鐘），看到淺灘就是了</li>
+                </ol>
+                <a href="https://www.google.com/maps/dir/馬胎仙境+新竹縣尖石鄉/油羅溪+新竹縣橫山鄉" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1 text-blue-600 hover:underline font-medium"><i class="fa-solid fa-location-arrow text-[10px]"></i>Google 地圖導航參考</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-2"><i class="fa-solid fa-star text-sky-600 mr-1"></i>到了可以玩什麼</p>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-sky-50 rounded p-2 flex gap-2"><span>💦</span><span>溪石間踩踏涉水，享受清涼山泉</span></div>
+              <div class="bg-sky-50 rounded p-2 flex gap-2"><span>🐟</span><span>找小魚、小蝦、螃蟹（觀賞就好）</span></div>
+              <div class="bg-sky-50 rounded p-2 flex gap-2"><span>🪨</span><span>讓小孩撿石頭、堆石塔，不需玩具</span></div>
+              <div class="bg-sky-50 rounded p-2 flex gap-2"><span>😌</span><span>大人坐石頭旁泡腳納涼聊天放空</span></div>
+              <div class="bg-orange-50 rounded p-2 flex gap-2 col-span-2"><span>🏖️</span><span>找溪邊淺沙灘，讓 Chih / 小胖嬰幼兒坐淺水區玩沙（記得穿救生衣）</span></div>
+            </div>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-2"><i class="fa-solid fa-bag-shopping text-sky-600 mr-1"></i>要帶什麼</p>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="flex gap-2"><span class="text-sky-700 font-bold shrink-0">必帶</span><span>防滑拖鞋（溪石超滑，普通涼拖會摔）</span></div>
+              <div class="flex gap-2"><span class="text-sky-700 font-bold shrink-0">必帶</span><span>換洗衣物，小孩多帶一套</span></div>
+              <div class="flex gap-2"><span class="text-red-600 font-bold shrink-0">必帶</span><span>嬰幼兒救生衣（Chih & 小胖家全程穿）</span></div>
+              <div class="flex gap-2"><span class="text-sky-700 font-bold shrink-0">必帶</span><span>防曬乳（溪邊反射，曬比想像快）</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>防水袋（裝手機 &amp; 乾衣物）</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>零食飲水（玩水很耗體力）</span></div>
+            </div>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-xs">
+            <p class="font-bold text-red-700 mb-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i>安全守則</p>
+            <div class="space-y-1.5 text-stone-700">
+              <p>🕒 <b>15:30 前必須離水</b>，午後雷陣雨常見，溪水可能急速暴漲</p>
+              <p>🌊 只在膝蓋以下的淺灘活動，不進深水區</p>
+              <p>👁️ 大人全程在水邊，嬰幼兒不離視線</p>
+              <p>👂 若聽到上游有異常轟隆水聲，立刻帶孩子上岸離開</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B: 秀巒溫泉 -->
+    <div id="act-b" onclick="if(event.target===this)closeAct('b')"
+         class="fixed inset-0 z-[200] bg-black/60 overflow-y-auto py-6 px-3 flex justify-center items-start" style="display:none">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-xl">
+        <div class="sticky top-0 z-10 bg-orange-500 text-white px-5 py-4 rounded-t-2xl flex justify-between items-start">
+          <div><div class="text-xs text-orange-200 mb-0.5">Day 2 方案 B</div><h2 class="text-xl font-bold">秀巒溫泉 ♨️</h2></div>
+          <button onclick="closeAct('b')" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-xl font-bold flex items-center justify-center flex-shrink-0">✕</button>
+        </div>
+        <div class="p-5 space-y-5 text-sm">
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="bg-orange-100 text-orange-800 px-2.5 py-1 rounded-full font-medium">💴 大眾池約 $400/人</span>
+            <span class="bg-red-100 text-red-800 px-2.5 py-1 rounded-full font-medium">📅 需提前預訂</span>
+            <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-medium">🚗 車程 30-40 分</span>
+            <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-medium">👨‍👩‍👧 親子大眾池</span>
+          </div>
+          <div class="bg-orange-50 border border-orange-200 rounded-lg p-3 text-xs text-orange-900">
+            <b>湯迴廊秀巒溫泉</b>｜新竹縣尖石鄉玉峰村，海拔 850 公尺。屬碳酸氫鈉泉（透明無味），泉溫 45-56℃，設大眾池與包廂套房。大眾池可親子共入，夏日高山泡湯格外消暑。電話：<b>03-5847599</b>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-2"><i class="fa-solid fa-map-location-dot text-orange-500 mr-1"></i>地點地圖</p>
+            <div id="map-act-b" class="rounded-lg border border-stone-200 overflow-hidden" style="height:190px"></div>
+            <p class="text-xs text-stone-400 mt-1">① 馬胎仙境（出發）　② 秀巒溫泉（目的地，車程 30-40 分）</p>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-3"><i class="fa-solid fa-route text-orange-500 mr-1"></i>開車路線（約 30-40 分）</p>
+            <div class="bg-orange-50 rounded-lg p-3 border border-orange-200 text-xs">
+              <ol class="space-y-2 text-stone-700 list-decimal list-inside">
+                <li>從馬胎仙境沿 <b>台120 線</b>往內灣方向下山</li>
+                <li>過義興橋後繼續沿台120，往 <b>尖石橋</b> 方向開（約 20 分）</li>
+                <li>過尖石橋後左轉，進入 <b>竹60縣道</b>（往秀巒方向有指標）</li>
+                <li>沿竹60 蜿蜒上山約 15-20 分，抵達秀巒部落</li>
+                <li>看到「湯迴廊秀巒」招牌即停車</li>
+              </ol>
+              <div class="mt-2 text-stone-500">路況提醒：竹60 山路彎多坡陡，嬰幼兒建議開車平穩，準備嘔吐袋備用。</div>
+            </div>
+            <a href="https://www.google.com/maps/dir/馬胎仙境+新竹縣尖石鄉/湯迴廊秀巒+新竹縣尖石鄉玉峰村" target="_blank" rel="noopener"
+               class="mt-3 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1.5 rounded font-medium transition-colors">
+              <i class="fa-solid fa-location-arrow"></i>Google 地圖導航
+            </a>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-2"><i class="fa-solid fa-bag-shopping text-orange-500 mr-1"></i>要帶什麼</p>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="flex gap-2"><span class="text-orange-600 font-bold shrink-0">必帶</span><span>泳衣 / 泳褲（大人小孩都要）</span></div>
+              <div class="flex gap-2"><span class="text-orange-600 font-bold shrink-0">必帶</span><span>大浴巾</span></div>
+              <div class="flex gap-2"><span class="text-orange-600 font-bold shrink-0">必帶</span><span>換洗衣物</span></div>
+              <div class="flex gap-2"><span class="text-orange-600 font-bold shrink-0">必帶</span><span>拖鞋（浴室地板滑）</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>礦泉水（泡湯流汗要多補水）</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>嘔吐袋（山路崎嶇，嬰幼兒備用）</span></div>
+            </div>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs space-y-1.5">
+            <p class="font-bold text-amber-800 mb-1"><i class="fa-solid fa-lightbulb mr-1"></i>泡湯注意事項</p>
+            <p class="text-stone-700">📞 <b>假日至少提前 3 天電話預訂</b>：03-5847599</p>
+            <p class="text-stone-700">👙 需穿著泳衣 / 泳褲入池，入池前須淋浴</p>
+            <p class="text-stone-700">👶 嬰幼兒每次泡湯建議不超過 10 分鐘，出來多補水</p>
+            <p class="text-stone-700">🅿️ 有停車場，多台大車沒問題</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C: 營區親子休閒 -->
+    <div id="act-c" onclick="if(event.target===this)closeAct('c')"
+         class="fixed inset-0 z-[200] bg-black/60 overflow-y-auto py-6 px-3 flex justify-center items-start" style="display:none">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-xl">
+        <div class="sticky top-0 z-10 bg-stone-600 text-white px-5 py-4 rounded-t-2xl flex justify-between items-start">
+          <div><div class="text-xs text-stone-300 mb-0.5">Day 2 方案 C</div><h2 class="text-xl font-bold">營區親子休閒 🎲</h2></div>
+          <button onclick="closeAct('c')" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-xl font-bold flex items-center justify-center flex-shrink-0">✕</button>
+        </div>
+        <div class="p-5 space-y-5 text-sm">
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-medium">💰 完全免費</span>
+            <span class="bg-sky-100 text-sky-800 px-2.5 py-1 rounded-full font-medium">📅 無需安排</span>
+            <span class="bg-purple-100 text-purple-800 px-2.5 py-1 rounded-full font-medium">🌧️ 雨天備案首選</span>
+            <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-medium">😮‍💨 最省力最隨興</span>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-3"><i class="fa-solid fa-star text-stone-600 mr-1"></i>在營區可以玩什麼</p>
+            <div class="space-y-3 text-xs">
+              <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                <div class="font-bold text-purple-800 mb-1">🎲 桌遊大會（雨天必殺技）</div>
+                <p class="text-stone-600">推薦帶：<b>Dobble（秒上手，大人小孩都瘋）</b>、Uno、撲克牌（大老二）、心臟病。大桌圍坐對決，歡笑聲比晴天還響。</p>
+              </div>
+              <div class="bg-sky-50 border border-sky-200 rounded-lg p-3">
+                <div class="font-bold text-sky-800 mb-1">🏸 戶外輕運動</div>
+                <p class="text-stone-600">在營區空地打羽毛球、踢足球、丟飛盤。山間涼風運動特別爽。帶球類器材就能玩，不佔空間。</p>
+              </div>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                <div class="font-bold text-emerald-800 mb-1">👶 嬰幼兒自由探索</div>
+                <p class="text-stone-600">準備一個小水盆（在草地旁）讓 Chih / 小胖的嬰幼兒玩水踩水。戶外大自然本身就是最好的玩具，草地爬行、撿葉子、摸石頭，一個下午就過去了。</p>
+              </div>
+              <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <div class="font-bold text-amber-800 mb-1">☕ 大人放空時光</div>
+                <p class="text-stone-600">輪流顧小孩，其他人在露台喝咖啡、吃下午茶、打牌聊天。對著遠山喝一杯，這才是 Camping 的精髓。</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="font-bold text-stone-700 mb-2"><i class="fa-solid fa-bag-shopping text-stone-600 mr-1"></i>要帶什麼</p>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="flex gap-2"><span class="text-red-600 font-bold shrink-0">必帶</span><span>桌遊 / 撲克牌（已列入裝備清單）</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>羽毛球拍 + 球</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>嬰幼兒小水盆或玩具</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>下午茶零食（咖啡 / 茶包）</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>防蚊液（戶外久坐必備）</span></div>
+              <div class="flex gap-2"><span class="text-stone-400 font-bold shrink-0">建議</span><span>摺疊椅 / 野餐墊</span></div>
+            </div>
+          </div>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-800">
+            <i class="fa-solid fa-cloud-rain mr-1"></i><b>雨天備案說明：</b>若下午突然下雨，溪邊 / 溫泉的人撤回營區，直接切換方案C。馬胎仙境有遮雨空間，大家擠在一起打桌遊，雨天有時反而更有趣。
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // ── Tab switching ──────────────────────────────────────────────
@@ -620,6 +818,40 @@
                 L.marker(p.ll, {icon: makeIcon(i + 1, p.color)}).addTo(map)
                     .bindPopup('<b>' + p.name + '</b><br><span style="font-size:12px;color:#666">' + p.note + '</span>');
             });
+        }
+
+        // ── Activity overlays ──────────────────────────────────────────
+        var _actMaps = {};
+
+        function openAct(id) {
+            document.getElementById('act-' + id).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            if (!_actMaps[id] && (id === 'a' || id === 'b')) {
+                setTimeout(function() { initActMap(id); }, 80);
+            } else if (_actMaps[id]) {
+                setTimeout(function() { _actMaps[id].invalidateSize(); }, 80);
+            }
+        }
+
+        function closeAct(id) {
+            document.getElementById('act-' + id).style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function initActMap(id) {
+            if (id === 'a') {
+                _actMaps.a = L.map('map-act-a', {scrollWheelZoom: false}).setView([24.616, 121.163], 14);
+                addLayer(_actMaps.a, [
+                    {ll:[24.613, 121.170], name:'馬胎仙境', note:'從這裡出發，步行 10-15 分', color:'#16a34a'},
+                    {ll:[24.620, 121.152], name:'溪邊入水區', note:'沿台120往內灣方向步行 / 開車', color:'#0ea5e9'}
+                ], '#0ea5e9');
+            } else if (id === 'b') {
+                _actMaps.b = L.map('map-act-b', {scrollWheelZoom: false}).setView([24.595, 121.200], 11);
+                addLayer(_actMaps.b, [
+                    {ll:[24.613, 121.170], name:'馬胎仙境', note:'出發點', color:'#16a34a'},
+                    {ll:[24.565, 121.238], name:'秀巒溫泉', note:'車程約 30-40 分（台120→竹60）', color:'#f97316'}
+                ], '#f97316');
+            }
         }
 
         function initMaps() {
