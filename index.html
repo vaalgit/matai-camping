@@ -279,7 +279,7 @@
                     <div class="flex items-start gap-3 p-2 bg-white rounded border border-teal-100">
                         <span class="bg-teal-500 text-white text-xs px-2 py-0.5 rounded font-bold flex-shrink-0 mt-0.5">出發前備</span>
                         <div><b class="text-teal-700">烤肉器具</b>｜食材路上採買，器具笨重建議提前備妥。<br>
-                        <span class="text-stone-500">炭烤爐（有腳架，可離地 50cm）× 3 台、隔熱板 × 3 片、烤網 × 3 組<br>
+                        <span class="text-stone-500">炭烤爐（有腳架，可離地 50cm）× 2 台、卡式爐 × 1 台（煮火鍋）、隔熱板 × 2 片、烤網 × 2 組<br>
                         長夾子 × 4、烤肉刷 × 4、隔熱手套 × 4、點炭器 × 2</span><br>
                         <span class="text-teal-700 font-medium text-xs mt-1 block">📦 蝦皮宅配取貨選項（建議 6/12 前下單）：</span>
                         <span class="text-stone-500 text-xs">・<b>竹東取貨（推薦）</b>：7-11 竹東仁愛店 或 全家竹東興仁店（仁愛路446號）→ Day 1 採購時順手取貨，最方便<br>
@@ -487,7 +487,7 @@
                     <li class="pl-5 relative">
                         <div class="absolute w-3 h-3 bg-amber-500 rounded-full -left-[7px] top-1.5"></div>
                         <b class="text-stone-900">17:30 - 21:00</b> <span class="text-amber-700 font-bold">二度烤肉！22 人大會師炭火趴 🍖</span>
-                        <p class="text-xs text-stone-500 mt-1">全員再次集合於<b>露營屋專用烤肉區</b>，今晚規模更大，建議架 <b>3 台炭烤爐</b>齊開。爐具需離地 50cm、爐下放隔熱板。晚間 22:00 前收攤降噪。</p>
+                        <p class="text-xs text-stone-500 mt-1">全員再次集合於<b>露營屋專用烤肉區</b>，今晚規模更大，建議架 <b>2 台炭烤爐</b> + <b>1 台卡式爐</b>（煮火鍋）。爐具需離地 50cm、爐下放隔熱板。晚間 22:00 前收攤降噪。</p>
                     </li>
                 </ul>
                 <div class="mt-4 p-3 bg-stone-50 rounded text-xs text-stone-600 border border-stone-200">
@@ -634,15 +634,19 @@
                         <div class="space-y-2 mb-3">
                             <label class="flex items-start gap-3 cursor-pointer">
                                 <input type="checkbox" id="item_bbq1" onchange="saveCheck('item_bbq1')" class="w-4 h-4 mt-0.5 rounded">
-                                <span><b>炭烤爐</b>（需有腳架，可架高離地 50cm）<span class="text-red-600 font-medium"> ⚠️ 火源不得落地</span><br><span class="text-stone-400 text-xs">Day 1 需 2 台 ／ Day 2 需 3 台</span></span>
+                                <span><b>炭烤爐</b>（需有腳架，可架高離地 50cm）<span class="text-red-600 font-medium"> ⚠️ 火源不得落地</span><br><span class="text-stone-400 text-xs">兩天各 2 台</span></span>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" id="item_bbq_gas" onchange="saveCheck('item_bbq_gas')" class="w-4 h-4 mt-0.5 rounded">
+                                <span><b>卡式爐</b> × 1 台 + <b>瓦斯罐</b>（煮火鍋用，Day 2）</span>
                             </label>
                             <label class="flex items-start gap-3 cursor-pointer">
                                 <input type="checkbox" id="item_bbq2" onchange="saveCheck('item_bbq2')" class="w-4 h-4 mt-0.5 rounded">
-                                <span><b>隔熱板</b> × 3 片（每台爐下方各1片，<span class="text-red-600 font-medium">營區規定不可缺</span>）</span>
+                                <span><b>隔熱板</b> × 2 片（每台炭烤爐下方各1片，<span class="text-red-600 font-medium">營區規定不可缺</span>）</span>
                             </label>
                             <label class="flex items-start gap-3 cursor-pointer">
                                 <input type="checkbox" id="item_bbq3" onchange="saveCheck('item_bbq3')" class="w-4 h-4 mt-0.5 rounded">
-                                <span><b>烤網 / 烤盤</b> × 3 組（每台爐1組）</span>
+                                <span><b>烤網 / 烤盤</b> × 2 組（每台炭烤爐1組）</span>
                             </label>
                             <label class="flex items-start gap-3 cursor-pointer">
                                 <input type="checkbox" id="item_bbq4" onchange="saveCheck('item_bbq4')" class="w-4 h-4 mt-0.5 rounded">
